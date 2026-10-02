@@ -1,8 +1,8 @@
-package io.github.eggy03.papertrail.sdk.client;
+package io.github.eggy03.papertrail.http.client;
 
-import io.github.eggy03.papertrail.sdk.entity.PaperTrailMessage;
-import io.github.eggy03.papertrail.sdk.exception.PaperTrailFatalException;
-import io.github.eggy03.papertrail.sdk.service.PaperTrailMessageService;
+import io.github.eggy03.papertrail.http.entity.PaperTrailMessage;
+import io.github.eggy03.papertrail.http.exception.PaperTrailFatalException;
+import io.github.eggy03.papertrail.http.service.PaperTrailMessageService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;

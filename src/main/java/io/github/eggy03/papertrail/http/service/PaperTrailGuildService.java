@@ -1,6 +1,6 @@
-package io.github.eggy03.papertrail.sdk.service;
+package io.github.eggy03.papertrail.http.service;
 
-import io.github.eggy03.papertrail.sdk.entity.PaperTrailGuild;
+import io.github.eggy03.papertrail.http.entity.PaperTrailGuild;
 import org.jspecify.annotations.NonNull;
 import retrofit2.Call;
 import retrofit2.http.Body;

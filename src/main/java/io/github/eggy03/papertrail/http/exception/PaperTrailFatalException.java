@@ -1,4 +1,4 @@
-package io.github.eggy03.papertrail.sdk.exception;
+package io.github.eggy03.papertrail.http.exception;
 
 public class PaperTrailFatalException extends RuntimeException {
     public PaperTrailFatalException(String message) {

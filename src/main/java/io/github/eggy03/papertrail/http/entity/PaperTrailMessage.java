@@ -1,4 +1,4 @@
-package io.github.eggy03.papertrail.sdk.entity;
+package io.github.eggy03.papertrail.http.entity;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
