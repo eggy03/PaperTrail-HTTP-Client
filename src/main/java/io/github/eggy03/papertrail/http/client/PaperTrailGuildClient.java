@@ -3,6 +3,7 @@ package io.github.eggy03.papertrail.http.client;
 import io.github.eggy03.papertrail.http.entity.PaperTrailGuild;
 import io.github.eggy03.papertrail.http.exception.PaperTrailFatalException;
 import io.github.eggy03.papertrail.http.service.PaperTrailGuildService;
+import okhttp3.ResponseBody;
 import org.jspecify.annotations.NonNull;
 import org.jspecify.annotations.Nullable;
 import org.slf4j.Logger;
@@ -40,8 +41,10 @@ public final class PaperTrailGuildClient {
             if (response.isSuccessful())
                 return true;
             else {
-                log.debug("Failed to save guild [Guild ID={}]\nError Response: {}", guildId, response.errorBody());
-                return false;
+                try (ResponseBody errorBody = response.errorBody()) {
+                    log.debug("Failed to save guild [Guild ID={}]\nError Response: {}", guildId, errorBody == null ? null : errorBody.string());
+                    return false;
+                }
             }
 
         } catch (IOException e) {
@@ -58,8 +61,10 @@ public final class PaperTrailGuildClient {
             if (response.isSuccessful())
                 return Optional.ofNullable(response.body());
             else {
-                log.debug("Failed to get guild [Guild ID={}]\nError Response: {}", guildId, response.errorBody());
-                return Optional.empty();
+                try (ResponseBody errorBody = response.errorBody()) {
+                    log.debug("Failed to get guild [Guild ID={}]\nError Response: {}", guildId, errorBody == null ? null : errorBody.string());
+                    return Optional.empty();
+                }
             }
 
         } catch (IOException e) {
@@ -79,8 +84,10 @@ public final class PaperTrailGuildClient {
             if (response.isSuccessful())
                 return true;
             else {
-                log.debug("Failed to update guild [Guild ID={}]\nError Response: {}", guildId, response.errorBody());
-                return false;
+                try (ResponseBody errorBody = response.errorBody()) {
+                    log.debug("Failed to update guild [Guild ID={}]\nError Response: {}", guildId, errorBody == null ? null : errorBody.string());
+                    return false;
+                }
             }
 
         } catch (IOException e) {
@@ -97,8 +104,10 @@ public final class PaperTrailGuildClient {
             if (response.isSuccessful())
                 return true;
             else {
-                log.debug("Failed to delete guild [Guild ID={}]\nError Response: {}", guildId, response.errorBody());
-                return false;
+                try (ResponseBody errorBody = response.errorBody()) {
+                    log.debug("Failed to delete guild [Guild ID={}]\nError Response: {}", guildId, errorBody == null ? null : errorBody.string());
+                    return false;
+                }
             }
 
         } catch (IOException e) {

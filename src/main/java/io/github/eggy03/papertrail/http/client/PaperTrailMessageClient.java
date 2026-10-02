@@ -3,6 +3,7 @@ package io.github.eggy03.papertrail.http.client;
 import io.github.eggy03.papertrail.http.entity.PaperTrailMessage;
 import io.github.eggy03.papertrail.http.exception.PaperTrailFatalException;
 import io.github.eggy03.papertrail.http.service.PaperTrailMessageService;
+import okhttp3.ResponseBody;
 import org.jspecify.annotations.NonNull;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -35,8 +36,10 @@ public final class PaperTrailMessageClient {
             if (response.isSuccessful())
                 return true;
             else {
-                log.debug("Failed to save message [id={}]\n Error Response: {}", messageId, response.errorBody());
-                return false;
+                try (ResponseBody errorBody = response.errorBody()) {
+                    log.debug("Failed to save message [Guild ID={}]\nError Response: {}", messageId, errorBody == null ? null : errorBody.string());
+                    return false;
+                }
             }
         } catch (IOException e) {
             throw new PaperTrailFatalException("Failed to talk to the API", e);
@@ -52,8 +55,10 @@ public final class PaperTrailMessageClient {
             if (response.isSuccessful())
                 return Optional.ofNullable(response.body());
             else {
-                log.debug("Failed to get message [id={}]\n Error Response: {}", messageId, response.errorBody());
-                return Optional.empty();
+                try (ResponseBody errorBody = response.errorBody()) {
+                    log.debug("Failed to get message [Guild ID={}]\nError Response: {}", messageId, errorBody == null ? null : errorBody.string());
+                    return Optional.empty();
+                }
             }
         } catch (IOException e) {
             throw new PaperTrailFatalException("Failed to talk to the API", e);
@@ -67,8 +72,10 @@ public final class PaperTrailMessageClient {
             if (response.isSuccessful())
                 return true;
             else {
-                log.debug("Failed to update message [id={}]\n Error Response: {}", messageId, response.errorBody());
-                return false;
+                try (ResponseBody errorBody = response.errorBody()) {
+                    log.debug("Failed to update message [Guild ID={}]\nError Response: {}", messageId, errorBody == null ? null : errorBody.string());
+                    return false;
+                }
             }
         } catch (IOException e) {
             throw new PaperTrailFatalException("Failed to talk to the API", e);
@@ -84,8 +91,10 @@ public final class PaperTrailMessageClient {
             if (response.isSuccessful())
                 return true;
             else {
-                log.debug("Failed to delete message [id={}]\n Error Response: {}", messageId, response.errorBody());
-                return false;
+                try (ResponseBody errorBody = response.errorBody()) {
+                    log.debug("Failed to delete message [Guild ID={}]\nError Response: {}", messageId, errorBody == null ? null : errorBody.string());
+                    return false;
+                }
             }
         } catch (IOException e) {
             throw new PaperTrailFatalException("Failed to talk to the API", e);
