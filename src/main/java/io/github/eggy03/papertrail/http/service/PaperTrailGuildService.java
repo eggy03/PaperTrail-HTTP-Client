@@ -18,7 +18,7 @@ public interface PaperTrailGuildService {
     @GET("api/v2/guild/{guildId}")
     Call<PaperTrailGuild> getGuild(@Path("guildId") @NonNull String guildId);
 
-    @PATCH("api/v2/guild}")
+    @PATCH("api/v2/guild")
     Call<Void> updateGuild(@Body PaperTrailGuild requestBody);
 
     @DELETE("api/v2/guild/{guildId}")
