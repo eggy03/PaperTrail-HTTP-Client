@@ -5,27 +5,27 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>io.github.eggy03</groupId>
-    <artifactId>papertrail-sdk</artifactId>
-    <version>3.0.4</version>
+    <artifactId>papertrail-http-client</artifactId>
+    <version>4.0.0</version>
 
     <properties>
-        <maven.compiler.release>8</maven.compiler.release>
+        <maven.compiler.release>25</maven.compiler.release>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
-        <project.name>PaperTrail SDK</project.name>
-        <project.description>SDK for the PaperTrail API</project.description>
-        <project.url>https://github.com/eggy03/papertrail-sdk</project.url>
+        <project.name>PaperTrail HTTP Client</project.name>
+        <project.description>HTTP Client for the PaperTrail API</project.description>
+        <project.url>https://github.com/eggy03/papertrail-http-client</project.url>
 
         <project.license.name>The MIT License</project.license.name>
-        <project.license.url>https://raw.githubusercontent.com/eggy03/papertrail-sdk/refs/heads/master/LICENSE
+        <project.license.url>https://raw.githubusercontent.com/eggy03/papertrail-http-client/refs/heads/master/LICENSE
         </project.license.url>
 
         <project.developer.id>Egg-03</project.developer.id>
         <project.developer.name>Sayan Bhattacharjee</project.developer.name>
         <project.developer.email>eggzerothree@proton.me</project.developer.email>
 
-        <project.scm.url>https://github.com/eggy03/papertrail-sdk.git</project.scm.url>
-        <project.scm.dev>scm:git:ssh://git@github.com:eggy03/papertrail-sdk.git</project.scm.dev>
+        <project.scm.url>https://github.com/eggy03/papertrail-http-client.git</project.scm.url>
+        <project.scm.dev>scm:git:ssh://git@github.com:eggy03/papertrail-http-client.git</project.scm.dev>
 
         <sonar.organization>eggy03</sonar.organization>
 
