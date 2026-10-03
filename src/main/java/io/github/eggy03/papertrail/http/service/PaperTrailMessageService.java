@@ -6,8 +6,8 @@ import retrofit2.Call;
 import retrofit2.http.Body;
 import retrofit2.http.DELETE;
 import retrofit2.http.GET;
+import retrofit2.http.PATCH;
 import retrofit2.http.POST;
-import retrofit2.http.PUT;
 import retrofit2.http.Path;
 
 public interface PaperTrailMessageService {
@@ -18,7 +18,7 @@ public interface PaperTrailMessageService {
     @GET("api/v2/message/{messageId}")
     Call<PaperTrailMessage> getMessage(@Path("messageId") @NonNull String messageId);
 
-    @PUT("api/v2/message")
+    @PATCH("api/v2/message")
     Call<Void> updateMessage(@Body PaperTrailMessage requestBody);
 
     @DELETE("api/v2/message/{messageId}")
