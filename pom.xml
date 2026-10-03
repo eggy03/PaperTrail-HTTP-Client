@@ -6,7 +6,7 @@
 
     <groupId>io.github.eggy03</groupId>
     <artifactId>papertrail-http-client</artifactId>
-    <version>1.0.0</version>
+    <version>4.0.0</version>
 
     <properties>
         <maven.compiler.release>25</maven.compiler.release>
